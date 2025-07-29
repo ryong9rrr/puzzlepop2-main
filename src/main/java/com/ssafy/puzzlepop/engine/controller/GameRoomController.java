@@ -116,7 +116,7 @@ public class GameRoomController {
                     return ResponseEntity.ok(game);
                 }
 
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("이미 시작된 방입니다.");
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("게임이 시작되서 입장할 수 없어요.");
             }
 
             if (game.getRedTeam().getPlayers().contains(user) || game.getBlueTeam().getPlayers().contains(user)) {
@@ -125,13 +125,13 @@ public class GameRoomController {
 
             if (game.getGameType().equals("BATTLE")) {
                 if (game.getRedTeam().getPlayers().size() + game.getBlueTeam().getPlayers().size() == game.getRoomSize()) {
-                    return ResponseEntity.status(HttpStatus.FORBIDDEN).body("정원이 가득찬 방입니다.");
+                    return ResponseEntity.status(HttpStatus.FORBIDDEN).body("정원이 가득차서 입장할 수 없어요.");
                 }
 
                 return ResponseEntity.ok(game);
             } else {
                 if (game.getRedTeam().getPlayers().size() == game.getRoomSize()) {
-                    return ResponseEntity.status(HttpStatus.FORBIDDEN).body("정원이 가득찬 방입니다.");
+                    return ResponseEntity.status(HttpStatus.FORBIDDEN).body("정원이 가득차서 입장할 수 없어요.");
                 }
 
                 return ResponseEntity.ok(game);
