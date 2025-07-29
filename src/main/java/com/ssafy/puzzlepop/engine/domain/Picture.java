@@ -51,7 +51,7 @@ public class Picture {
         Picture p = new Picture();
         p.width = 1000;
         p.length = 551;
-        p.encodedString = "짱구.jpg";
+        p.encodedString = "https://puzzlepop.site/cdn/64731e94-96db-4f58-927c-407e86beeb8c1747680592661/origin.webp";
 
         p.pieceSize = 40;
         p.levelSize = new HashMap<>();
