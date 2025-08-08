@@ -44,6 +44,6 @@ jobs:
             docker-compose -f docker-compose-main.yml down
             docker rmi ${{ secrets.DOCKER_USERNAME }}/puzzlepop2:main-server || true
             docker-compose -f docker-compose-main.yml pull
-            docker-compose -f docker-compose-main.yml up -d --remove-orphans
+            docker-compose -f docker-compose-main.yml up -d
             docker image prune -f
             EOF
